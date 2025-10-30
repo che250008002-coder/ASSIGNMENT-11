@@ -11,6 +11,6 @@ for (int i = 0;i<100;i++){
 delete[]sales;
 sales=temp;
 cout << "array resized to 200 elements" << endl;
-delete[]sales;
+delete[]temp;
     return 0;
 }
