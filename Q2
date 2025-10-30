@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct student{
+    string name;
+    int age;
+    char gender;
+    string branch;
+};
+int main(){
+ student *students = new student[100];
+ students[0].name = "Abhinav";
+ students[0].age = 19;
+ students[0].gender = 'M';
+ students[0].branch = "chemical";
+ student *temp = new student[200];
+ for (int i=0;i<100;i++){
+     temp[i]=students[i];
+ }
+    delete[]students;
+    students = temp;
+    cout << "Array resized successfully to 200 students" << endl;
+    delete[]students;
+    
+    
+    
+    return 0;
+}
