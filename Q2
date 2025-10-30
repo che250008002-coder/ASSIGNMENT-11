@@ -1,28 +1,45 @@
 #include <iostream>
 #include <string>
 using namespace std;
-struct student{
+
+struct Student {
     string name;
     int age;
     char gender;
     string branch;
 };
-int main(){
- student *students = new student[100];
- students[0].name = "Abhinav";
- students[0].age = 19;
- students[0].gender = 'M';
- students[0].branch = "chemical";
- student *temp = new student[200];
- for (int i=0;i<100;i++){
-     temp[i]=students[i];
- }
-    delete[]students;
+
+int main() {
+    
+    Student* students = new Student[100];
+    Student* temp = new Student[200];
+    for (int i = 0; i < 100; i++) {
+        temp[i] = students[i];
+    }
+   delete[] students;
     students = temp;
-    cout << "Array resized successfully to 200 students" << endl;
-    delete[]students;
-    
-    
-    
+
+    cout << "Enter details for 200 students:\n";
+
+    for (int i = 0; i < 200; i++) {
+        cout << "\nStudent " << i + 1 << endl;
+
+        cout << "Name: ";
+        cin >> students[i].name;
+
+        cout << "Age: ";
+        cin >> students[i].age;
+
+        cout << "Gender: ";
+        cin >> students[i].gender;
+
+        cout << "Branch: ";
+        cin >> students[i].branch;
+    }
+
+    cout << "200 students data entry completed" << endl;;
+    delete[] temp;
+
     return 0;
 }
+	
